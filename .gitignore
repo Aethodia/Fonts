@@ -1,0 +1,12 @@
+# Version control
+.git/
+
+# Tempfiles
+*.swp
+tmp/
+
+# Binary files
+bin/*
+
+# Exceptions
+!.keep
