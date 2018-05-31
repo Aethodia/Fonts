@@ -4,17 +4,31 @@
 ## by all persons with git blame to this file in this git branch, per the terms of
 ## the GNU AGPL 3.0 with the additional allowances of the GNU LGPL 3.0.
 # Baby's first Python script
-## Expects two variables
 
 ## Imports
 import fontforge
 import sys
+
+## Helptext
+def help():
+	print("genFont.py")
+	print("Copyright (C) 2018 by Miles B Huff per GNU LAGPL3")
+	print()
+	print("This program expects three variables:")
+	print("- An action (either 'gen' or 'rip)")
+	print("- An input file")
+	print("- An output file")
+	print()
+	print("Actions:")
+	print("- gen:  Expects an input .sfd file and an output font file.")
+	print("- rip:  Expects an input font file and an output .sfd file.")
 
 ## Main
 try:
 	## Check for parameters
 	if len(sys.argv) < 4:
 		sys.stderr.write('Invalid parameters.')
+		help()
 		sys.exit(1)
 
 	## Open the font
@@ -22,7 +36,7 @@ try:
 
 	## Save the font as an .sfd
 	if sys.argv[1] == 'rip':
-		save(sys.argv[3])
+		font.save(sys.argv[3])
 
 	## Generate a font of the specified format, or a TTF font if bitmapped.
 	elif sys.argv[1] == 'gen':
