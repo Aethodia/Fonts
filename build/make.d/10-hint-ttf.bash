@@ -5,17 +5,17 @@
 
 ## Runs a FontForge script
 function run-script {
-	fontforge -script "$1" "$2" "$3" 2>&1 | tail -n +4 1>&2
+	fontforge -script "$1" "$2" "$3" "$4" 2>&1 | tail -n +4 1>&2
 }
 
 ## Converts an .sfd file into a font
 function compile {
-	run-script 'build/misc/genFont.py' "$1" "$2"
+	run-script 'build/misc/genFont.py' 'gen' "$1" "$2"
 }
 
 ## Converts a font into an .sfd file
 function decompile {
-	run-script 'build/misc/ripFont.py' "$1" "$2"
+	run-script 'build/misc/genFont.py' 'rip' "$1" "$2"
 }
 
 echo -e "\e[34;1m::\e[0;1m Generating fonts...\e[0m"
