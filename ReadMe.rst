@@ -30,4 +30,4 @@ Dependencies
 - Build dependencies
 
   - fontforge
-  - ttfautohint
+  - ttfautohint (v1.7+)
