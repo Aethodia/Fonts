@@ -20,7 +20,7 @@ for F in $(find -type f); do
 		## Compile a .ttf
 		genFont 'gen' "src/$F.sfd" "bin/$F.ttf"
 		## Hint that .ttf
-		ttfautohint -iW --default-script=latn --fallback-script=latn --fallback-stem-width=100 --hinting-limit=96 --hinting-range-max=36 --hinting-range-min=5 --increase-x-height=0 --strong-stem-width=gGD "bin/$F".ttf "bin/Hinted_$F.ttf" #-p
+		ttfautohint -iW --default-script=latn --fallback-script=latn --fallback-stem-width=100 --hinting-limit=96 --hinting-range-max=36 --hinting-range-min=5 --increase-x-height=12 --strong-stem-width=gGD "bin/$F".ttf "bin/Hinted_$F.ttf" #-p
 		mv "bin/Hinted_$F.ttf" "bin/$F.ttf"
 		## Save the modified font
 		genFont 'rip' "bin/$F.ttf" "bin/$F.sfd"
