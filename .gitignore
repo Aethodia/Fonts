@@ -4,6 +4,7 @@
 # Tempfiles
 *.swp
 tmp/
+temp/
 *~
 
 # Binary files

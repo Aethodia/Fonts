@@ -27,7 +27,7 @@ def help():
 try:
 	## Check for parameters
 	if len(sys.argv) < 4:
-		sys.stderr.write('Invalid parameters.')
+		sys.stderr.write('Invalid parameters.\n')
 		help()
 		sys.exit(1)
 
@@ -40,18 +40,19 @@ try:
 
 	## Generate a font of the specified format, or a TTF font if bitmapped.
 	elif sys.argv[1] == 'gen':
-		font.generate(sys.argv[3], bitmap_type='ttf', flags=('apple', 'opentype', 'PfEd-background', 'PfEd-colors', 'PfEd-guidelines', 'round', 'TeX-table'), bitmap_resolution=-1);
+		font.generate(sys.argv[3], bitmap_type='ttf', flags=('apple', 'opentype', 'PfEd-background', 'PfEd-colors', 'round', 'TeX-table'), bitmap_resolution=-1) #'PfEd-guidelines'
 
 	## If the first argument is invalid, exit with an error and message.
 	else:
-		sys.stderr.write('Invalid action.')
+		sys.stderr.write('Invalid action.\n')
 		sys.exit(2)
 
 	## Close the font for reading
 	font.close()
 
 except:
-	## If there were any errors, quit with an error code.
+	## If there were any errors, print what they are and quit with an error code.
+	raise
 	sys.exit(3)
 
 ## If there were no errors, quit successfully.

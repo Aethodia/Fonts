@@ -17,13 +17,25 @@ for F in $(find -type f); do
 	if [[ "$F" != '.'* ]] && [[ "$F" != *'~' ]]; then
 		echo -e "\e[34;1m::\e[0m Compiling and hinting .ttf..."
 		echo "bin/$F.ttf"
+
 		## Compile a .ttf
 		genFont 'gen' "src/$F.sfd" "bin/$F.ttf"
+		if [[ ! -f "bin/$F.ttf" ]]; then
+			echo 'Failed to compile font!'
+			exit 1
+		fi
+
 		## Hint that .ttf
-		ttfautohint -iW --default-script=latn --fallback-script=latn --fallback-stem-width=100 --hinting-limit=96 --hinting-range-max=36 --hinting-range-min=5 --increase-x-height=12 --strong-stem-width=gGD "bin/$F".ttf "bin/Hinted_$F.ttf" #-p
+		ttfautohint -iW --default-script=latn --fallback-script=latn --fallback-stem-width=100 --hinting-limit=96 --hinting-range-max=36 --hinting-range-min=5 --increase-x-height=12 --stem-width-mode=qsq "bin/$F.ttf" "bin/Hinted_$F.ttf" #-p
+		if [[ ! -f "bin/Hinted_$F.ttf" ]]; then
+			echo 'Failed to hint font!' >&2
+			exit 2
+		fi
 		mv "bin/Hinted_$F.ttf" "bin/$F.ttf"
+
 		## Save the modified font
 		genFont 'rip' "bin/$F.ttf" "bin/$F.sfd"
+
 		## Compile an .otf
 		echo -e "\e[34;1m::\e[0m Compiling .otf from .ttf..."
 		echo "bin/$F.otf"
