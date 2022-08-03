@@ -1,11 +1,11 @@
 SplineFontDB: 3.0
-FontName: TheodicSans
-FullName: Theodic Sans
-FamilyName: Theodic
+FontName: AethodicSans
+FullName: Aethodic Sans
+FamilyName: Aethodic
 Weight: Medium
 Copyright: Copyright (C) from 2017 by Miles B Huff per CC BY-SA v4.0
 Version: 001.000
-DefaultBaseFilename: Theodic_Sans
+DefaultBaseFilename: Aethodic_Sans
 ItalicAngle: 0
 UnderlinePosition: -500
 UnderlineWidth: 100

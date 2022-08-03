@@ -3,8 +3,8 @@ ReadMe
 
 Description
 ================================================================================
-| This repository contains the sources for Theodic, a family of fonts for the
-  Theodic script.
+| This repository contains the sources for Aethodic, a family of fonts for the
+  Aethodic script.
 | The completed font consists of everything under ``/bin`` after a build.
 
 Copyright

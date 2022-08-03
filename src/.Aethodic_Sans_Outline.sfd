@@ -1,7 +1,7 @@
 SplineFontDB: 3.0
-FontName: TheodianSans
-FullName: Theodian Sans
-FamilyName: Theodian Sans
+FontName: AethodianSans
+FullName: Aethodian Sans
+FamilyName: Aethodian Sans
 Weight: Medium
 Copyright: Copyright (C) from 2017 by Miles B Huff per CC BY-SA v4.0
 Version: 001.000
@@ -56,7 +56,7 @@ OS2Vendor: 'PfEd'
 Lookup: 260 0 0 "Diacritics"  {"Diacritic positions"  } ['mark' ('DFLT' <'dflt' > 'latn' <'dflt' > ) ]
 MarkAttachClasses: 1
 DEI: 91125
-LangName: 1033 "" "" "" "FontForge : Theodian Sans : 16-10-2017" 
+LangName: 1033 "" "" "" "FontForge : Aethodian Sans : 16-10-2017" 
 Encoding: UnicodeBmp
 Compacted: 1
 UnicodeInterp: none
