@@ -51,6 +51,12 @@ for F in $(find -type f); do
 		fonttools otlLib.optimize "bin/$F.otf"
 		fonttools cffLib.width "bin/$F.otf"
 		# fonttools subset "bin/$F.otf" #TODO: Come up with a good list of arguments for this.
+
+		## Generate .woff/.woff2 from .otf
+		echo -e "\n\e[34;1m::\e[0m Compiling .woff and .woff2..."
+		woff "bin/$F.otf"
+		mv "$F.woff" "bin/"
+		fonttools ttLib.woff2 compress "bin/$F.otf"
 	fi
 done
 echo -e "\n\e[34;1m::\e[0;1m Done.\e[0m"
